@@ -64,13 +64,13 @@ public class Main extends ActionBarActivity {
     class FileUploadThread extends Thread {
     	String response = "No response";
     	public void run() {
-            FileUpload fileUpload = new FileUpload(new FileUploadConfig("http://192.168.50.37/project_ceres/ApplicantProfile/upload"));
+            FileUpload fileUpload = new FileUpload(new FileUploadConfig("http://192.168.50.37/demo/upload"));
             if (fileUpload != null) {
             	// applicant_photo
             	// applicant_id
             	
-            	fileUpload.attachFile(getImageData("mark-zuckerberg-5.jpg"),"applicant_photo","image/jpeg");
-            	fileUpload.addParam("applicant_id","1");
+            	fileUpload.attachFile(getImageData("mark-zuckerberg-5.jpg"),"file","image/jpeg");
+            	fileUpload.addParam("id","1");
             	response = fileUpload.startUploadingFile("mark-zuckerberg-5.jpg");
             	fileUpload.dispose();
             	
